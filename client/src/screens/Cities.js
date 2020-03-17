@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Nav from "../components/Nav";
+import City from "../components/City";
 
 export class Cities extends Component {
   constructor(props) {
@@ -28,6 +29,9 @@ export class Cities extends Component {
         <Nav />
         <div className="content">
           <h1>Cities</h1>
+          {this.state.cities.map((city, index) => {
+            return <City key={index} city={city} />;
+          })}
         </div>
       </div>
     );
