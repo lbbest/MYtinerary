@@ -45,9 +45,7 @@ export class Cities extends Component {
   };
 
   render() {
-    console.log(this.state.cities);
     const filteredCities = this.cityFilter();
-    console.log(filteredCities);
     return (
       <div>
         <Nav />
@@ -61,11 +59,12 @@ export class Cities extends Component {
           ></input>
         </div>
         <div className="content">
-          <h1>Cities</h1>
-          {this.state.cities &&
-            filteredCities.map((city, index) => {
-              return <City key={index} city={city} />;
-            })}
+          <div id="cityList">
+            {this.state.cities &&
+              filteredCities.map((city, index) => {
+                return <City key={index} city={city} />;
+              })}
+          </div>
         </div>
       </div>
     );
