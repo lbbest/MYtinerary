@@ -37,8 +37,8 @@ export class Cities extends Component {
   cityFilter = () => {
     let filter = this.state.cities.filter(cities => {
       return (
-        cities.country.includes(this.state.filter) ||
-        cities.name.includes(this.state.filter)
+        cities.name.includes(this.state.filter) ||
+        cities.country.includes(this.state.filter)
       );
     });
     return filter;
