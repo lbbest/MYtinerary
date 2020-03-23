@@ -28,4 +28,6 @@ function cities(state = initialState, action) {
   return state;
 }
 
+// Bear combineReducer() in mind if adding another reducer here - will need to edit export default below
+
 export default cities;

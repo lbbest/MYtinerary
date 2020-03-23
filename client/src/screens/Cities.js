@@ -7,26 +7,52 @@ import City from "../components/City";
 export class Cities extends Component {
   constructor() {
     super();
+    this.state = {
+      search: ""
+    };
   }
 
   componentDidMount() {
     this.props.getCityAction();
   }
 
+  handleSearch = search => {
+    this.setState({ search });
+    // console.log(search);
+  };
+
+  searchBar = () => {
+    let search = this.props.cities.filter(cities => {
+      return (
+        cities.name.toUpperCase().includes(this.state.search.toUpperCase()) ||
+        cities.country.toUpperCase().includes(this.state.search.toUpperCase())
+      );
+    });
+    return search;
+  };
+
   render() {
     const { cities } = this.props;
-    // console.log(this.props);
+    // console.log(this.props.cities);
+    const filteredCities = this.searchBar();
+    // console.log(filteredCities);
     return (
       <div>
         <Nav />
         <div className="filter">
-          <input type="text" id="filter" placeholder="Find a city..."></input>
+          <input
+            type="text"
+            id="filter"
+            placeholder="Find a city..."
+            onChange={event => this.handleSearch(event.target.value)}
+          ></input>
         </div>
         <div className="content">
           <div id="cityList">
-            {cities.map((city, index) => {
-              return <City key={index} city={city} />;
-            })}
+            {cities &&
+              filteredCities.map((city, index) => {
+                return <City key={index} city={city} />;
+              })}
           </div>
         </div>
       </div>
