@@ -17,7 +17,8 @@ const cityStyle = {
   display: "grid",
   gridTemplateRows: "50% 50%",
   gridTemplateColumns: "70% 30%",
-  border: "1px solid black"
+  border: "1px solid black",
+  borderRadius: "5px"
 };
 
 const cityName = {
@@ -38,5 +39,8 @@ const cityCountry = {
 const cityImg = {
   gridColumn: "2/3",
   gridRow: "1/3",
-  borderLeft: "1px solid black"
+  borderLeft: "1px solid black",
+  objectFit: "cover",
+  width: "100%",
+  height: "100%"
 };
