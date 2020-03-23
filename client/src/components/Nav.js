@@ -5,8 +5,12 @@ export default function Nav() {
   return (
     <div>
       <div id="nav" style={navStyle}>
-        <Link to="/">Home</Link>
-        <Link to="/cities">Cities</Link>
+        <Link to="/" style={bareLink}>
+          Home
+        </Link>
+        <Link to="/cities" style={bareLink}>
+          Cities
+        </Link>
       </div>
     </div>
   );
@@ -27,4 +31,9 @@ const navStyle = {
   position: "fixed",
   top: "0",
   backgroundColor: "white"
+};
+
+const bareLink = {
+  textDecoration: "none",
+  color: "black"
 };

@@ -12,10 +12,14 @@ export default function Landing() {
           <h1 className="logo">MYtinerary</h1>
           <div id="login" style={loginStyle}>
             <button>
-              <Link to="/login">Log In</Link>
+              <Link to="/login" style={whiteLink}>
+                Log In
+              </Link>
             </button>
             <button>
-              <Link to="/createaccount">Create Account</Link>
+              <Link to="/createaccount" style={whiteLink}>
+                Create Account
+              </Link>
             </button>
           </div>
           <p>
@@ -49,4 +53,9 @@ const proceedStyle = {
   backgroundColor: "rgba(100, 100, 100, 0.4)",
   padding: "10px",
   borderRadius: "50%"
+};
+
+const whiteLink = {
+  textDecoration: "none",
+  color: "white"
 };
