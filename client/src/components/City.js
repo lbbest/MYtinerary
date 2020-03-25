@@ -33,7 +33,8 @@ const cityCountry = {
   gridColumn: "1/2",
   gridRow: "2/3",
   margin: "auto",
-  textAlign: "center"
+  textAlign: "center",
+  color: "#A9A9A9"
 };
 
 const cityImg = {

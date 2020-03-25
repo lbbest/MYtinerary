@@ -24,8 +24,8 @@ export class Cities extends Component {
   searchBar = () => {
     let search = this.props.cities.filter(cities => {
       return (
-        cities.name.toUpperCase().includes(this.state.search.toUpperCase()) ||
-        cities.country.toUpperCase().includes(this.state.search.toUpperCase())
+        cities.name.toUpperCase().startsWith(this.state.search.toUpperCase()) ||
+        cities.country.toUpperCase().startsWith(this.state.search.toUpperCase())
       );
     });
     return search;
