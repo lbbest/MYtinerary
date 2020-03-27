@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Nav from "../components/Nav";
 import Popular from "../components/Popular";
 
+/*landing page screen structure*/
 export default function Landing() {
   return (
     <div>
@@ -42,6 +43,7 @@ export default function Landing() {
   );
 }
 
+/*landing page screen styles*/
 const loginStyle = {
   display: "flex",
   justifyContent: "space-around"

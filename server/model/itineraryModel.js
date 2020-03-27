@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
+/*itinerary schema structure*/
 const itinerarySchema = new Schema({
   name: {
     type: String,

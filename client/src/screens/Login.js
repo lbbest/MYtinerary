@@ -1,6 +1,7 @@
 import React from "react";
 import Nav from "../components/Nav";
 
+/*login page structure*/
 export default function Login() {
   return (
     <div>

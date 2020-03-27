@@ -1,5 +1,6 @@
 import React from "react";
 
+/*city component structure*/
 export default function City(props) {
   const city = props.city;
   return (
@@ -11,6 +12,7 @@ export default function City(props) {
   );
 }
 
+/*city component styles*/
 const cityStyle = {
   width: "100%",
   height: "15vh",

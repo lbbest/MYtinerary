@@ -1,5 +1,6 @@
 import React from "react";
 
+/*popular component structure*/
 export default function Popular() {
   return (
     <div>

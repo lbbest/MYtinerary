@@ -4,6 +4,7 @@ const router = express.Router();
 
 const itineraryModel = require("../model/itineraryModel");
 
+/*get array of city itineraries*/
 router.get("/:name", (req, res) => {
   let itineraryRequested = req.params.name;
   itineraryModel

@@ -8,6 +8,7 @@ import CreateAcc from "./screens/CreateAcc";
 
 function App() {
   return (
+    /*router*/
     <BrowserRouter>
       <div className="App">
         <Switch>

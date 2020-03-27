@@ -1,6 +1,7 @@
 import React from "react";
 import Nav from "../components/Nav";
 
+/*create account screen structure*/
 export default function CreateAcc() {
   return (
     <div>

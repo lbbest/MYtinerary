@@ -7,6 +7,7 @@ import City from "../components/City";
 export class Cities extends Component {
   constructor() {
     super();
+    /*screen-level state used to hold search query*/
     this.state = {
       search: ""
     };
@@ -16,11 +17,13 @@ export class Cities extends Component {
     this.props.getCityAction();
   }
 
+  /*update state as user inputs search query*/
   handleSearch = search => {
     this.setState({ search });
     // console.log(search);
   };
 
+  /*search bar function to return filtered list of cities that include query in city name or country name*/
   searchBar = () => {
     let search = this.props.cities.filter(cities => {
       return (
@@ -31,9 +34,12 @@ export class Cities extends Component {
     return search;
   };
 
+  /*cities screen structure*/
   render() {
+    /*variable for all cities*/
     const { cities } = this.props;
     // console.log(this.props.cities);
+    /*variable for filtered cities from search query*/
     const filteredCities = this.searchBar();
     // console.log(filteredCities);
     return (
@@ -44,6 +50,7 @@ export class Cities extends Component {
             type="text"
             id="filter"
             placeholder="Find a city..."
+            /*fires search function upon user input*/
             onChange={event => this.handleSearch(event.target.value)}
           ></input>
         </div>
@@ -60,6 +67,7 @@ export class Cities extends Component {
   }
 }
 
+/*subscribe screen to Redux store*/
 const mapStateToProps = state => {
   // console.log(state);
   return {

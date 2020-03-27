@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+/*nav component structure*/
 export default function Nav() {
   return (
     <div>
@@ -16,10 +17,7 @@ export default function Nav() {
   );
 }
 
-/*
-Make font different colour when on the active page
-*/
-
+/*nav component styles*/
 const navStyle = {
   display: "flex",
   justifyContent: "space-around",

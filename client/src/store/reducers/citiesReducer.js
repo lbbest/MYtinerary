@@ -1,11 +1,14 @@
+/*import actions*/
 import {
   CITY_REQUESTED,
   CITY_RECEIVED,
   CITY_FAILED
 } from "../actions/cityActions";
 
+/*set initial state*/
 const initialState = { data: [], status: "" };
 
+/*assign database collection to data object array in Redux store*/
 function cities(state = initialState, action) {
   switch (action.type) {
     case CITY_REQUESTED:

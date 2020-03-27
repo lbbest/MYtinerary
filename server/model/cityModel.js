@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
+/*city schema structure*/
 const citySchema = new Schema({
   name: {
     type: String,
