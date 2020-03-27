@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 const itinerarySchema = new Schema({
-  city: {
+  name: {
     type: String,
     required: true
   },
