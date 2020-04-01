@@ -5,6 +5,7 @@ import Landing from "./screens/Landing";
 import Cities from "./screens/Cities";
 import Login from "./screens/Login";
 import CreateAcc from "./screens/CreateAcc";
+import { Itinerary } from "./screens/Itinerary";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route path="/cities" component={Cities} />
+          <Route path="/itineraries/:name" component={Itinerary} />
           <Route path="/login" component={Login} />
           <Route path="/createaccount" component={CreateAcc} />
         </Switch>

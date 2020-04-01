@@ -1,14 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 /*city component structure*/
 export default function City(props) {
   const city = props.city;
   return (
-    <div className="city" style={cityStyle}>
-      <h2 style={cityName}>{city.name}</h2>
-      <h3 style={cityCountry}>{city.country}</h3>
-      <img src={city.img} alt={city.name} style={cityImg}></img>
-    </div>
+    <Link to={`/itineraries/${city.name}`}>
+      <div className="city" style={cityStyle}>
+        <h2 style={cityName}>{city.name}</h2>
+        <h3 style={cityCountry}>{city.country}</h3>
+        <img src={city.img} alt={city.name} style={cityImg}></img>
+      </div>
+    </Link>
   );
 }
 
