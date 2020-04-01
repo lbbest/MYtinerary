@@ -5,13 +5,13 @@ import { Link } from "react-router-dom";
 export default function City(props) {
   const city = props.city;
   return (
-    <Link to={`/itineraries/${city.name}`}>
-      <div className="city" style={cityStyle}>
+    <div className="city">
+      <Link to={`/itineraries/${city.name}`} style={cityStyle}>
         <h2 style={cityName}>{city.name}</h2>
         <h3 style={cityCountry}>{city.country}</h3>
         <img src={city.img} alt={city.name} style={cityImg}></img>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 }
 
@@ -23,7 +23,8 @@ const cityStyle = {
   gridTemplateRows: "50% 50%",
   gridTemplateColumns: "70% 30%",
   border: "1px solid black",
-  borderRadius: "5px"
+  borderRadius: "5px",
+  textDecoration: "none"
 };
 
 const cityName = {
@@ -31,7 +32,8 @@ const cityName = {
   gridRow: "1/2",
   margin: "auto",
   textAlign: "center",
-  fontSize: "2em"
+  fontSize: "2em",
+  color: "black"
 };
 
 const cityCountry = {
