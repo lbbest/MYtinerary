@@ -55,7 +55,7 @@ export class Cities extends Component {
           ></input>
         </div>
         <div className="content">
-          <div id="cityList">
+          <div className="list">
             {cities &&
               filteredCities.map((city, index) => {
                 return <City key={index} city={city} />;

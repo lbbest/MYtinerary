@@ -90,10 +90,12 @@ code {
   z-index: 998;
 }
 
-#cityList {
+/*LISTS*/
+
+.list {
   margin-top: 125px;
 }
 
-#cityList > * {
+.list > * {
   margin: 10% 0;
 }
