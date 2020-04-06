@@ -18,13 +18,15 @@ export class Itinerary extends Component {
 
   render() {
     const itinerary = this.state.itinerary ? (
-      <div className="list">
+      <div className="itemlist">
         {this.state.itinerary.map((itinerary, index) => {
           return <Itin key={index} itinerary={itinerary} />;
         })}
       </div>
     ) : (
-      <div></div>
+      <div>
+        <h3 className="itemlist">Loading itineraries...</h3>
+      </div>
     );
 
     return (

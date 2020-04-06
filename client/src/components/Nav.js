@@ -28,7 +28,8 @@ const navStyle = {
   fontSize: "1.5em",
   position: "fixed",
   top: "0",
-  backgroundColor: "white"
+  backgroundColor: "white",
+  zIndex: "998"
 };
 
 const bareLink = {

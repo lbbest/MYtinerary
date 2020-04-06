@@ -22,8 +22,7 @@ const cityStyle = {
   display: "grid",
   gridTemplateRows: "50% 50%",
   gridTemplateColumns: "70% 30%",
-  border: "1px solid black",
-  borderRadius: "5px",
+  boxShadow: "0px 0px 13px 4px rgba(184,184,184,0.74)",
   textDecoration: "none"
 };
 

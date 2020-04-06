@@ -12,6 +12,10 @@ const itinerarySchema = new Schema({
     required: true,
     unique: true
   },
+  user: {
+    type: String,
+    required: true
+  },
   picture: {
     type: String
   },
