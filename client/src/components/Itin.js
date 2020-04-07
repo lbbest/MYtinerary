@@ -21,9 +21,9 @@ export default function Itin(props) {
           <p style={itinHashtag}>#{hashtag}</p>
         ))}
       </div>
-      <span style={itinExpand}>
+      <div style={itinExpand}>
         <p>View Activities</p>
-      </span>
+      </div>
     </div>
   );
 }
@@ -31,7 +31,7 @@ export default function Itin(props) {
 /*itin component styles*/
 const itinStyle = {
   width: "100%",
-  height: "35vh",
+  height: "25vh",
   border: "1px solid black",
   borderRadius: "5px",
   display: "grid",
