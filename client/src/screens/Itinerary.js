@@ -19,7 +19,6 @@ export class Itinerary extends Component {
   render() {
     const itinerary = this.state.itinerary ? (
       <div className="itemlist">
-        <h2>{this.state.itinerary.name}</h2>
         {this.state.itinerary.map((itinerary, index) => {
           return <Itin key={index} itinerary={itinerary} />;
         })}

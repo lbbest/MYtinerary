@@ -1,41 +1,85 @@
 import React from "react";
+import ExpansionPanel from "@material-ui/core/ExpansionPanel";
+import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
+import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 /*itin component structure*/
 export default function Itin(props) {
   const itin = props.itinerary;
+  const responsive = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1
+    }
+  };
   return (
-    <div className="itin" style={itinStyle}>
-      <h2 style={itinTitle}>{itin.title}</h2>
-      <img src={itin.picture} alt="User" style={itinPicture}></img>
-      <p style={itinUser}>
-        Created by:<br></br>
-        <strong>{itin.user}</strong>
-      </p>
-      <div style={itinInfo}>
-        <p>Likes: {itin.likes}</p>
-        <p>{itin.duration} hours</p>
-        <p>{itin.price}</p>
+    <div style={cardStyle}>
+      <div className="itin" style={itinStyle}>
+        <h2 style={itinTitle}>{itin.title}</h2>
+        <img src={itin.picture} alt="User" style={itinPicture}></img>
+        <p style={itinUser}>
+          Created by:<br></br>
+          <strong>{itin.user}</strong>
+        </p>
+        <div style={itinInfo}>
+          <p>Likes: {itin.likes}</p>
+          <p>{itin.duration} hours</p>
+          <p>{itin.price}</p>
+        </div>
+        <div style={itinHashtags}>
+          {itin.hashtags.map(hashtag => (
+            <p style={itinHashtag}>#{hashtag}</p>
+          ))}
+        </div>
       </div>
-      <div style={itinHashtags}>
-        {itin.hashtags.map(hashtag => (
-          <p style={itinHashtag}>#{hashtag}</p>
-        ))}
-      </div>
-      <div style={itinExpand}>
-        <p>View Activities</p>
+      <div className="activities" style={itinActivities}>
+        <ExpansionPanel style={itinExpand}>
+          <ExpansionPanelSummary
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <p>View Activities</p>
+          </ExpansionPanelSummary>
+          <ExpansionPanelDetails>
+            <Carousel responsive={responsive} style={itinCarousel}>
+              <div style={itinCarouselItem}>Item 1</div>
+              <div>Item 2</div>
+              <div>Item 3</div>
+              <div>Item 4</div>
+            </Carousel>
+          </ExpansionPanelDetails>
+        </ExpansionPanel>
       </div>
     </div>
   );
 }
 
 /*itin component styles*/
+
+const cardStyle = {
+  border: "1px solid black",
+  borderRadius: "5px"
+};
+
 const itinStyle = {
   width: "100%",
-  height: "25vh",
-  border: "1px solid black",
-  borderRadius: "5px",
+  height: "20vh",
   display: "grid",
-  gridTemplateRows: "25% 25% 25% 25%",
+  gridTemplateRows: "1fr, 1fr, 1fr",
   gridTemplateColumns: "25% 25% 25% 25%",
   justifyItems: "center",
   alignItems: "center"
@@ -84,13 +128,26 @@ const itinHashtag = {
   marginRight: "10px"
 };
 
+const itinActivities = {
+  width: "100%"
+};
+
 const itinExpand = {
-  gridRow: "4/5",
-  gridColumn: "1/5",
-  backgroundColor: "grey",
   width: "100%",
-  height: "100%",
-  display: "inline-flex",
-  justifyContent: "center",
+  borderTop: "1px solid black",
+  display: "flex",
+  flexDirection: "column",
   alignItems: "center"
+};
+
+const itinCarousel = {
+  height: "100px",
+  width: "100px",
+  backgroundColor: "red"
+};
+
+const itinCarouselItem = {
+  height: "100px",
+  width: "100px",
+  backgroundColor: "red"
 };
