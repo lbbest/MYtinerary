@@ -33,7 +33,9 @@ export default function Itin(props) {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <p>View Activities</p>
+            <p>
+              <strong>View Activities</strong>
+            </p>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Activities activities={props.itinerary.activities} />
