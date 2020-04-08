@@ -5,36 +5,40 @@ var Schema = mongoose.Schema;
 const itinerarySchema = new Schema({
   name: {
     type: String,
-    required: true
+    required: true,
   },
   title: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
   },
   user: {
     type: String,
-    required: true
+    required: true,
   },
   picture: {
-    type: String
+    type: String,
   },
   likes: {
     type: Number,
-    required: true
+    required: true,
   },
   duration: {
     type: Number,
-    required: true
+    required: true,
   },
   price: {
     type: String,
-    required: true
+    required: true,
   },
   hashtags: {
     type: Array,
-    required: true
-  }
+    required: true,
+  },
+  activities: {
+    type: Array,
+    required: true,
+  },
 });
 
 module.exports = mongoose.model("itinerary", itinerarySchema);
