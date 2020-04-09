@@ -3,16 +3,23 @@ import SwipeableViews from "react-swipeable-views";
 
 export default function Activities(props) {
   const activities = props.activities;
+  const city = props.city;
   return (
     <div className="activities">
       <SwipeableViews style={swipeStyle}>
         {activities.map((activity) => (
-          <div className="activity" style={activityStyle}>
-            <p style={activityNameStyle}>{activity}</p>
-          </div>
+          <a
+            href={`https://www.google.com/maps/dir/Current+Location/${city}+${activity}`}
+            target="_blank"
+            className="activity"
+          >
+            <div style={activityStyle}>
+              <p style={activityNameStyle}>{activity}</p>
+            </div>
+          </a>
         ))}
       </SwipeableViews>
-      <p> ❮ ❯ </p>
+      {/* <p> ❮ ❯ </p> */}
     </div>
   );
 }
@@ -24,7 +31,6 @@ const swipeStyle = {
 const activityStyle = {
   height: "10vh",
   backgroundColor: "#6AC0FF",
-  borderRadius: "5px",
 };
 
 const activityNameStyle = {

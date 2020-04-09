@@ -110,3 +110,11 @@ code {
 .itemlist > * {
   margin: 10% 0;
 }
+
+/*ACTIVITIES*/
+
+.activity,
+.activity:visited {
+  text-decoration: none;
+  color: black;
+}

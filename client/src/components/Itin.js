@@ -1,5 +1,6 @@
 import React from "react";
 import Activities from "./Activities";
+import Commentbox from "./Commentbox";
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
@@ -37,8 +38,12 @@ export default function Itin(props) {
               <strong>View Activities</strong>
             </p>
           </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-            <Activities activities={props.itinerary.activities} />
+          <ExpansionPanelDetails style={itinExpandBody}>
+            <Activities
+              city={props.itinerary.name}
+              activities={props.itinerary.activities}
+            />
+            <Commentbox />
           </ExpansionPanelDetails>
         </ExpansionPanel>
       </div>
@@ -112,4 +117,9 @@ const itinExpand = {
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
+};
+
+const itinExpandBody = {
+  display: "flex",
+  flexDirection: "column",
 };
