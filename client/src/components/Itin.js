@@ -3,6 +3,7 @@ import Activities from "./Activities";
 import Commentbox from "./Commentbox";
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 
 /*itin component structure*/
@@ -31,6 +32,7 @@ export default function Itin(props) {
       <div className="expansionpanel">
         <ExpansionPanel style={itinExpand}>
           <ExpansionPanelSummary
+            expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
@@ -114,12 +116,9 @@ const itinHashtag = {
 const itinExpand = {
   width: "100%",
   borderTop: "1px solid black",
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
 };
 
 const itinExpandBody = {
-  display: "flex",
-  flexDirection: "column",
+  display: "grid",
+  gridRows: "1fr 1fr",
 };
