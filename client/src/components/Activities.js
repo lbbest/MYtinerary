@@ -25,7 +25,7 @@ export default function Activities(props) {
 }
 
 const swipeStyle = {
-  marginBottom: "10px",
+  marginBottom: "5vh",
 };
 
 const activityStyle = {
