@@ -118,3 +118,55 @@ code {
   text-decoration: none;
   color: black;
 }
+
+/*COMMENTS*/
+
+.comment-box {
+  /*comments component container*/
+  border-radius: 5px;
+  background-color: red;
+}
+
+.comment-form {
+  /*name & comment input container*/
+}
+
+.comment-form-fields {
+  /*name & comment input fields*/
+}
+
+.comment-form-actions {
+  /*post comment button*/
+}
+
+#comment-reveal {
+  /*show comments button*/
+}
+
+.comment-count {
+  /*comment count h4*/
+}
+
+.comment-list {
+  /*comment list container*/
+}
+
+.comment {
+  /*individual comment*/
+}
+
+.comment-header {
+  /*comment author*/
+}
+
+.comment-body {
+  /*comment text*/
+}
+
+.comment-footer {
+  /*delete comment container*/
+}
+
+.comment-footer-delete {
+  /*delete comment button*/
+}
