@@ -29,7 +29,7 @@ export class Commentbox extends Component {
         <button id="comment-reveal" onClick={this._handleClick.bind(this)}>
           {buttonText}
         </button>
-        <h3>Comments</h3>
+        <h3 style={{ float: "left" }}>Comments</h3>
         <h4 className="comment-count">
           {this._getCommentsTitle(comments.length)}
         </h4>

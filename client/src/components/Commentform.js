@@ -19,7 +19,9 @@ export class Commentform extends Component {
           ></textarea>
         </div>
         <div className="comment-form-actions">
-          <button type="submit">Post Comment</button>
+          <button type="submit">
+            <strong>Post Comment</strong>
+          </button>
         </div>
       </form>
     );

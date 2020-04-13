@@ -124,49 +124,73 @@ code {
 .comment-box {
   /*comments component container*/
   border-radius: 5px;
-  background-color: red;
+  box-shadow: 0px 0px 13px 4px rgba(184, 184, 184, 0.74);
+  padding: 1rem;
 }
 
 .comment-form {
-  /*name & comment input container*/
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem 0;
 }
 
-.comment-form-fields {
-  /*name & comment input fields*/
+.comment-form-fields > input,
+textarea {
+  width: 100%;
+  resize: vertical;
+  border: none;
+  border-bottom: 1px solid black;
+  font-size: 1rem;
 }
 
 .comment-form-actions {
-  /*post comment button*/
+  height: 1rem;
+}
+
+.comment-form-actions > button {
+  float: left;
 }
 
 #comment-reveal {
-  /*show comments button*/
+  float: right;
+  background-color: white;
+  border-radius: 5px;
+  padding: 0.25rem;
 }
 
 .comment-count {
-  /*comment count h4*/
-}
-
-.comment-list {
-  /*comment list container*/
+  float: left;
+  margin: 0.25rem 0;
 }
 
 .comment {
-  /*individual comment*/
+  border-top: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+  padding: 0.25rem;
 }
 
 .comment-header {
-  /*comment author*/
+  float: left;
 }
 
 .comment-body {
-  /*comment text*/
+  font-style: italic;
+  margin-left: 1rem;
+  padding: 0.5rem;
 }
 
 .comment-footer {
-  /*delete comment container*/
+  margin-bottom: 1rem;
 }
 
-.comment-footer-delete {
-  /*delete comment button*/
+.comment-footer-delete,
+.comment-footer-delete:visited {
+  padding: 0.25rem;
+  text-decoration: none;
+  color: #909090;
 }
