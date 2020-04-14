@@ -26,16 +26,16 @@ const navStyle = {
   justifyContent: "space-around",
   height: "75px",
   width: "100%",
-  borderBottom: "#f1f1f1 solid 3px",
+  // borderBottom: "#2f394d solid 3px",
   alignItems: "center",
   fontSize: "1.5em",
   position: "fixed",
   top: "0",
-  backgroundColor: "white",
+  backgroundColor: "#3c91e6",
   zIndex: "998",
 };
 
 const bareLink = {
   textDecoration: "none",
-  color: "black",
+  color: "white",
 };

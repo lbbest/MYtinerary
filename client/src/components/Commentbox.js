@@ -24,13 +24,13 @@ export class Commentbox extends Component {
 
     return (
       <div className="comment-box">
-        <h3>Join the discussion!</h3>
+        <h3 style={{ color: "black" }}>Join the discussion!</h3>
         <Commentform addComment={this._addComment.bind(this)} />
         <button id="comment-reveal" onClick={this._handleClick.bind(this)}>
           {buttonText}
         </button>
-        <h3 style={{ float: "left" }}>Comments</h3>
-        <h4 className="comment-count">
+        <h3 style={{ float: "left", color: "black" }}>Comments</h3>
+        <h4 className="comment-count" style={{ color: "black" }}>
           {this._getCommentsTitle(comments.length)}
         </h4>
         {commentNodes}

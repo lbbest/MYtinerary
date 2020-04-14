@@ -30,5 +30,5 @@ export default function Login() {
 
 const loginLinkStyle = {
   textDecoration: "none",
-  color: "red",
+  color: "#3c91e6",
 };

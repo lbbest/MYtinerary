@@ -2,6 +2,18 @@
 @import url("https://fonts.googleapis.com/css?family=Yellowtail&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Varela+Round&display=swap");
 
+/*COLOR PALETTE*/
+
+:root {
+  --black-color: #080705;
+  --bg-color: #ffffff;
+  --primary-color: #3c91e6;
+  --secondary-color: #14213d;
+  --tertiary-color: #2f394d;
+}
+
+/*MAIN*/
+
 * {
   padding: 0;
   margin: 0;
@@ -11,6 +23,7 @@
 body {
   margin: 0;
   font-family: "Varela Round", sans-serif;
+  color: var(--black-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -29,9 +42,14 @@ code {
 
 /*LANDING*/
 
+#homepage {
+  background-image: linear-gradient(var(--primary-color) 19%, white);
+}
+
 .logo {
   font-family: "Yellowtail", cursive;
-  font-size: 10vw;
+  font-size: 15vw;
+  color: white;
 }
 
 /* #hello {
@@ -43,11 +61,13 @@ code {
 }
 
 #login > button {
-  width: 30%;
-  max-width: 30%;
-  background-color: black;
+  width: 35%;
+  height: 8vh;
+  max-width: 35%;
+  background-color: var(--secondary-color);
   color: white;
-  border-radius: 10px;
+  border-radius: 4vh;
+  border: 1px solid #14213d;
   font-size: 1em;
   padding: 10px;
 }
@@ -123,16 +143,12 @@ code {
 
 .comment-box {
   /*comments component container*/
-  border-radius: 5px;
-  box-shadow: 0px 0px 13px 4px rgba(184, 184, 184, 0.74);
+  background-color: white;
   padding: 1rem;
 }
 
 .comment-form {
   background-color: #fff;
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: 1rem;
   margin: 1rem 0;
 }
 
@@ -155,7 +171,8 @@ textarea {
 
 #comment-reveal {
   float: right;
-  background-color: white;
+  background-color: var(--secondary-color);
+  color: white;
   border-radius: 5px;
   padding: 0.25rem;
 }
@@ -222,7 +239,7 @@ textarea {
 }
 
 .login-btn {
-  background-color: red;
+  background-color: var(--secondary-color);
   color: white;
   width: 90%;
   height: 10vh;

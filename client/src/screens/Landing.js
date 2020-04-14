@@ -8,7 +8,7 @@ export default function Landing() {
   return (
     <div>
       <Nav />
-      <div className="content">
+      <div className="content" id="homepage">
         <div id="hello">
           <h1 className="logo">MYtinerary</h1>
           <div id="login" style={loginStyle}>
@@ -46,18 +46,18 @@ export default function Landing() {
 /*landing page screen styles*/
 const loginStyle = {
   display: "flex",
-  justifyContent: "space-around"
+  justifyContent: "space-around",
 };
 
 const proceedStyle = {
   height: "100px",
   width: "100px",
-  backgroundColor: "rgba(100, 100, 100, 0.4)",
+  backgroundColor: "rgba(47, 57, 77, 0.4)",
   padding: "10px",
-  borderRadius: "50%"
+  borderRadius: "50%",
 };
 
 const whiteLink = {
   textDecoration: "none",
-  color: "white"
+  color: "white",
 };

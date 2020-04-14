@@ -32,7 +32,7 @@ export default function Itin(props) {
       <div className="expansionpanel">
         <ExpansionPanel style={itinExpand}>
           <ExpansionPanelSummary
-            expandIcon={<ExpandMoreIcon />}
+            expandIcon={<ExpandMoreIcon style={{ color: "white" }} />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
@@ -102,7 +102,7 @@ const itinInfo = {
 const itinHashtags = {
   gridRow: "3/4",
   gridColumn: "2/5",
-  color: "blue",
+  color: "#3c91e6",
   display: "flex",
   flexDirection: "row",
   justifyContent: "space-around",
@@ -116,6 +116,8 @@ const itinHashtag = {
 const itinExpand = {
   width: "100%",
   borderTop: "1px solid black",
+  backgroundColor: "#14213d",
+  color: "white",
 };
 
 const itinExpandBody = {
