@@ -21,7 +21,7 @@ code {
 }
 
 .content {
-  padding: 0 10%;
+  padding: 100px 10% 0 10%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -34,9 +34,9 @@ code {
   font-size: 10vw;
 }
 
-#hello {
+/* #hello {
   margin: 75px 0;
-}
+} */
 
 #hello > * {
   margin: 5% 0;
@@ -93,7 +93,7 @@ code {
 /*LISTS*/
 
 .itemlist {
-  margin-top: 125px;
+  margin-top: 25px;
   animation: fadeIn 2s;
   animation-fill-mode: forwards;
 }
@@ -193,4 +193,39 @@ textarea {
   padding: 0.25rem;
   text-decoration: none;
   color: #909090;
+}
+
+/*LOGIN/CREATE ACCOUNT*/
+
+.login-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 75vh;
+}
+
+.login-form {
+  width: 100%;
+}
+
+.login-field,
+.login-btn {
+  margin: 5%;
+}
+
+.login-field > input {
+  width: 100%;
+  height: 7vh;
+  border: none;
+  border-bottom: 1px solid black;
+  font-size: 1rem;
+}
+
+.login-btn {
+  background-color: red;
+  color: white;
+  width: 90%;
+  height: 10vh;
+  font-size: 1.5rem;
+  border-radius: 5vh;
 }

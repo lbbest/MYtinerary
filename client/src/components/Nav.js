@@ -12,6 +12,9 @@ export default function Nav() {
         <Link to="/cities" style={bareLink}>
           Cities
         </Link>
+        <Link to="/login" style={bareLink}>
+          Log In
+        </Link>
       </div>
     </div>
   );
@@ -29,10 +32,10 @@ const navStyle = {
   position: "fixed",
   top: "0",
   backgroundColor: "white",
-  zIndex: "998"
+  zIndex: "998",
 };
 
 const bareLink = {
   textDecoration: "none",
-  color: "black"
+  color: "black",
 };
