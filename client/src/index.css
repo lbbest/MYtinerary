@@ -236,6 +236,7 @@ textarea {
   border: none;
   border-bottom: 1px solid black;
   font-size: 1rem;
+  padding: 5%;
 }
 
 .login-btn {
