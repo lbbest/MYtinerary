@@ -11,14 +11,14 @@ export default function CreateAcc() {
       <div className="content">
         <div className="login-content">
           <h1>Create Account</h1>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry.
+          <p className="login-hello">
+            Enter your details below and enjoy full access to all of our
+            features!
           </p>
           <Createaccountform />
           <p>
             Already have an account?<br></br>
-            <Link to="login" style={loginLinkStyle}>
+            <Link to="login" className="login-switch">
               Log in
             </Link>
           </p>
@@ -27,8 +27,3 @@ export default function CreateAcc() {
     </div>
   );
 }
-
-const loginLinkStyle = {
-  textDecoration: "none",
-  color: "#3c91e6",
-};

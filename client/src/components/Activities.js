@@ -19,7 +19,6 @@ export default function Activities(props) {
           </a>
         ))}
       </SwipeableViews>
-      {/* <p> ❮ ❯ </p> */}
     </div>
   );
 }
@@ -29,7 +28,7 @@ const swipeStyle = {
 };
 
 const activityStyle = {
-  height: "10vh",
+  height: "20vh",
   backgroundColor: "#3c91e6",
 };
 

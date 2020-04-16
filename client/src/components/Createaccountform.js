@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import axios from "axios";
+import SimpleReactValidator from "simple-react-validator";
 
 export class Createaccountform extends Component {
   constructor(props) {
     super(props);
+
+    // create account form state
     this.state = {
       username: "",
       email: "",
@@ -11,16 +14,30 @@ export class Createaccountform extends Component {
       password: "",
     };
 
+    // form functions for setting state and handling submit
     this.setField = this.setField.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+
+    // imported validation library
+    this.validator = new SimpleReactValidator();
   }
 
+  // function that sets state upon user form input
   setField(event) {
     this.setState({ [event.target.name]: event.target.value });
   }
 
+  // function that handles the form submission
   async handleSubmit(event) {
     event.preventDefault();
+
+    // checks form validation and returns error messages if not valid inputs
+    if (!this.validator.allValid()) {
+      this.validator.showMessages();
+      this.forceUpdate();
+    }
+
+    // axios post requst to user database collection
     await axios({
       method: "post",
       url: "http://localhost:5000/users/",
@@ -42,6 +59,7 @@ export class Createaccountform extends Component {
 
   render() {
     return (
+      // create account form
       <form
         className="login-form"
         id="create-account-form"
@@ -53,44 +71,54 @@ export class Createaccountform extends Component {
         <div className="login-field" id="create-account-username">
           <input
             type="text"
-            pattern="[a-zA-Z0-9]+"
             placeholder="Username"
             name="username"
             value={this.state.username}
             onChange={this.setField}
-            required
           />
+          {/*username required and only alphanum characters*/}
+          {this.validator.message(
+            "username",
+            this.state.username,
+            "required|alpha_num"
+          )}
         </div>
         <div className="login-field" id="create-account-email">
           <input
-            type="email"
+            type="text"
             placeholder="Email"
             name="email"
             value={this.state.email}
             onChange={this.setField}
-            required
           />
+          {/*email required and must be email format*/}
+          {this.validator.message("email", this.state.email, "required|email")}
         </div>
         <div className="login-field" id="create-account-picture">
           <input
-            type="url"
+            type="text"
             placeholder="Picture (URL)"
             name="picture"
             value={this.state.picture}
             onChange={this.setField}
-            required
           />
+          {/*picture required and must be url format*/}
+          {this.validator.message("picture", this.state.picture, "url")}
         </div>
         <div className="login-field" id="create-account-password">
           <input
             type="password"
-            minLength="8"
             placeholder="Password"
             name="password"
             value={this.state.password}
             onChange={this.setField}
-            required
           />
+          {/*password required and must be at least 8 characters*/}
+          {this.validator.message(
+            "password",
+            this.state.password,
+            "required|min:8"
+          )}
         </div>
         <button
           type="submit"

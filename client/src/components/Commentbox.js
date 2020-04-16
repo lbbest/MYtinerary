@@ -30,7 +30,10 @@ export class Commentbox extends Component {
           {buttonText}
         </button>
         <h3 style={{ float: "left", color: "black" }}>Comments</h3>
-        <h4 className="comment-count" style={{ color: "black" }}>
+        <h4
+          className="comment-count"
+          style={{ marginTop: "2%", color: "black", width: "100%" }}
+        >
           {this._getCommentsTitle(comments.length)}
         </h4>
         {commentNodes}

@@ -145,6 +145,7 @@ code {
   /*comments component container*/
   background-color: white;
   padding: 1rem;
+  margin: 0 -26px;
 }
 
 .comment-form {
@@ -219,6 +220,12 @@ textarea {
   flex-direction: column;
   justify-content: space-between;
   height: 75vh;
+  overflow-y: visible;
+}
+
+.login-hello {
+  margin-top: 2vh;
+  color: #939393;
 }
 
 .login-form {
@@ -246,4 +253,16 @@ textarea {
   height: 10vh;
   font-size: 1.5rem;
   border-radius: 5vh;
+}
+
+.login-switch {
+  text-decoration: none;
+  color: #3c91e6;
+}
+
+/*login validation messages*/
+.srv-validation-message {
+  color: red;
+  background-color: #fadadd;
+  padding: 5px;
 }
