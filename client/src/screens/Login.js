@@ -11,14 +11,13 @@ export default function Login() {
       <div className="content">
         <div className="login-content">
           <h1>Log In</h1>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry.
+          <p className="login-hello">
+            Welcome back! Log in to access your MYtinerary account.
           </p>
           <Loginform />
           <p>
             Don't have an account yet?<br></br>
-            <Link to="createaccount" style={loginLinkStyle}>
+            <Link to="createaccount" className="login-switch">
               Create an account
             </Link>
           </p>
@@ -27,8 +26,3 @@ export default function Login() {
     </div>
   );
 }
-
-const loginLinkStyle = {
-  textDecoration: "none",
-  color: "#3c91e6",
-};
