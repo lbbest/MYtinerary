@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 import SimpleReactValidator from "simple-react-validator";
 
 export class Loginform extends Component {
@@ -32,22 +33,22 @@ export class Loginform extends Component {
       this.forceUpdate();
     }
 
-    // axios requst
-    //  await axios({
-    //    method: "post",
-    //    url: "http://localhost:5000/users/",
-    //    data: {
-    //      email: this.state.email,
-    //      password: this.state.password,
-    //    },
-    //  })
-    //    .then((res) => {
-    //      // console.log(res);
-    //      console.log(res.data);
-    //    })
-    //    .catch((err) => {
-    //      console.log(err);
-    //    });
+    // axios request
+    await axios({
+      method: "post",
+      url: "http://localhost:5000/users/login",
+      data: {
+        email: this.state.email,
+        password: this.state.password,
+      },
+    })
+      .then((res) => {
+        // console.log(res);
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   render() {
@@ -57,8 +58,8 @@ export class Loginform extends Component {
         id="login-form"
         onChange={this.setField}
         onSubmit={this.handleSubmit}
-        // method=""
-        // action=""
+        method="post"
+        action="http://localhost:5000/users/login"
       >
         <div className="login-field" id="login-email">
           <input

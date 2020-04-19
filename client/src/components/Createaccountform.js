@@ -40,7 +40,7 @@ export class Createaccountform extends Component {
     // axios post requst to user database collection
     await axios({
       method: "post",
-      url: "http://localhost:5000/users/",
+      url: "http://localhost:5000/users/create",
       data: {
         username: this.state.username,
         email: this.state.email,
@@ -66,7 +66,7 @@ export class Createaccountform extends Component {
         onChange={this.setField}
         onSubmit={this.handleSubmit}
         method="POST"
-        action="http://localhost:5000/users/"
+        action="http://localhost:5000/users/create"
       >
         <div className="login-field" id="create-account-username">
           <input
