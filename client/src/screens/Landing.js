@@ -7,7 +7,7 @@ export default function Landing() {
   return (
     <div>
       <Nav />
-      <div className="content" id="homepage">
+      <div id="homepage">
         <div id="hello">
           <h1 className="logo">MYtinerary</h1>
           <div id="login" style={loginStyle}>

@@ -2,16 +2,17 @@ import React, { Component } from "react";
 import axios from "axios";
 import Nav from "../components/Nav";
 import Itin from "../components/Itin";
+import { Link } from "react-router-dom";
 
 export class Itinerary extends Component {
   state = {
-    itinerary: null
+    itinerary: null,
   };
   componentDidMount() {
     let name = this.props.match.params.name;
-    axios.get("http://localhost:5000/itineraries/" + name).then(res => {
+    axios.get("http://localhost:5000/itineraries/" + name).then((res) => {
       this.setState({
-        itinerary: res.data
+        itinerary: res.data,
       });
     });
   }
@@ -33,6 +34,7 @@ export class Itinerary extends Component {
       <div>
         <Nav />
         <div className="content">
+          <h1 className="itineraryCity">{this.props.match.params.name}</h1>
           <div>{itinerary}</div>
         </div>
       </div>

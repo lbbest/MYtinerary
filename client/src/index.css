@@ -43,6 +43,8 @@ code {
 /*LANDING*/
 
 #homepage {
+  margin-top: 75px;
+  padding: 0 10%;
   background-image: linear-gradient(var(--primary-color) 19%, white);
 }
 
@@ -52,9 +54,12 @@ code {
   color: white;
 }
 
-/* #hello {
-  margin: 75px 0;
-} */
+#hello {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 85vh;
+}
 
 #hello > * {
   margin: 5% 0;
