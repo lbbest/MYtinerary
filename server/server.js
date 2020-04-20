@@ -2,6 +2,7 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const passport = require("passport");
 
 /*middleware*/
 /*bodyparser*/
@@ -17,6 +18,10 @@ app.use(
 /*cors*/
 const cors = require("cors");
 app.use(cors());
+
+/*middleware*/
+/*passport*/
+app.use(passport.initialize());
 
 /*port setup*/
 const port = process.env.PORT || 5000;

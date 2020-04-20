@@ -5,6 +5,7 @@ const bcrypt = require("bcrypt");
 const { check, validationResult } = require("express-validator");
 const key = require("../keys");
 const jwt = require("jsonwebtoken");
+const passport = require("../passport");
 
 // router.get("/all", (req, res) => {
 //   userModel
@@ -25,7 +26,25 @@ router.post("/login", async (req, res) => {
       bcrypt.compare(req.body.password, user.password, (err, data) => {
         if (err) throw err;
         if (data) {
-          return res.status(200).json({ msg: "Login success" });
+          const payload = {
+            id: user.id,
+            username: user.username,
+            avatarPicture: user.avatarPicture,
+          };
+          const options = { expiresIn: 2592000 };
+          jwt.sign(payload, key.secretOrKey, options, (err, token) => {
+            if (err) {
+              res.json({
+                success: false,
+                token: "There was an error",
+              });
+            } else {
+              res.json({
+                success: true,
+                token: token,
+              });
+            }
+          });
         } else {
           return res
             .status(401)
@@ -35,6 +54,20 @@ router.post("/login", async (req, res) => {
     }
   });
 });
+
+/*get login auth route*/
+router.get(
+  "/",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    userModel
+      .findOne({ _id: req.user.id })
+      .then((user) => {
+        res.json(user);
+      })
+      .catch((err) => res.status(404).json({ error: "User does not exist!" }));
+  }
+);
 
 /*create account post route*/
 router.post(

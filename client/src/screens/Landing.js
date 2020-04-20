@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Nav from "../components/Nav";
-import Popular from "../components/Popular";
 
 /*landing page screen structure*/
 export default function Landing() {
@@ -38,7 +37,6 @@ export default function Landing() {
           </Link>
         </div>
       </div>
-      <Popular />
     </div>
   );
 }
