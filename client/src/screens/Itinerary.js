@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import Nav from "../components/Nav";
 import Itin from "../components/Itin";
-import { Link } from "react-router-dom";
 
 export class Itinerary extends Component {
   state = {

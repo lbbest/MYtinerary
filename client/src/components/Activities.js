@@ -11,6 +11,7 @@ export default function Activities(props) {
           <a
             href={`https://www.google.com/maps/dir/Current+Location/${city}+${activity}`}
             target="_blank"
+            rel="noopener noreferrer"
             className="activity"
           >
             <div style={activityStyle}>

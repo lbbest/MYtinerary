@@ -8,7 +8,8 @@ export class Comment extends Component {
         <p className="comment-body">- {this.props.body}</p>
         <div className="comment-footer">
           <a
-            href="#"
+            // HREF TO BE CHANGED
+            href="http://www.google.com"
             className="comment-footer-delete"
             onClick={this._deleteComment}
           >

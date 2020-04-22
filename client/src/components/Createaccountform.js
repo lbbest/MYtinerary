@@ -59,77 +59,95 @@ export class Createaccountform extends Component {
 
   render() {
     return (
-      // create account form
-      <form
-        className="login-form"
-        id="create-account-form"
-        onChange={this.setField}
-        onSubmit={this.handleSubmit}
-        method="POST"
-        action="http://localhost:5000/users/create"
-      >
-        <div className="login-field" id="create-account-username">
-          <input
-            type="text"
-            placeholder="Username"
-            name="username"
-            value={this.state.username}
-            onChange={this.setField}
-          />
-          {/*username required and only alphanum characters*/}
-          {this.validator.message(
-            "username",
-            this.state.username,
-            "required|alpha_num"
-          )}
-        </div>
-        <div className="login-field" id="create-account-email">
-          <input
-            type="text"
-            placeholder="Email"
-            name="email"
-            value={this.state.email}
-            onChange={this.setField}
-          />
-          {/*email required and must be email format*/}
-          {this.validator.message("email", this.state.email, "required|email")}
-        </div>
-        <div className="login-field" id="create-account-picture">
-          <input
-            type="text"
-            placeholder="Picture (URL)"
-            name="picture"
-            value={this.state.picture}
-            onChange={this.setField}
-          />
-          {/*picture required and must be url format*/}
-          {this.validator.message("picture", this.state.picture, "url")}
-        </div>
-        <div className="login-field" id="create-account-password">
-          <input
-            type="password"
-            placeholder="Password"
-            name="password"
-            value={this.state.password}
-            onChange={this.setField}
-          />
-          {/*password required and must be at least 8 characters*/}
-          {this.validator.message(
-            "password",
-            this.state.password,
-            "required|min:8"
-          )}
-        </div>
-        <button
-          type="submit"
-          form="create-account-form"
-          value="Submit"
-          className="login-btn"
-          id="create-account-submit"
+      <div className="userform">
+        {/* create account form */}
+        <form
+          className="login-form"
+          id="create-account-form"
+          onChange={this.setField}
+          onSubmit={this.handleSubmit}
+          method="POST"
+          action="http://localhost:5000/users/create"
         >
-          <strong>Create Account</strong>
-        </button>
-      </form>
+          <div className="login-field" id="create-account-username">
+            <input
+              type="text"
+              placeholder="Username"
+              name="username"
+              value={this.state.username}
+              onChange={this.setField}
+            />
+            {/*username required and only alphanum characters*/}
+            {this.validator.message(
+              "username",
+              this.state.username,
+              "required|alpha_num"
+            )}
+          </div>
+          <div className="login-field" id="create-account-email">
+            <input
+              type="text"
+              placeholder="Email"
+              name="email"
+              value={this.state.email}
+              onChange={this.setField}
+            />
+            {/*email required and must be email format*/}
+            {this.validator.message(
+              "email",
+              this.state.email,
+              "required|email"
+            )}
+          </div>
+          <div className="login-field" id="create-account-picture">
+            <input
+              type="text"
+              placeholder="Picture (URL)"
+              name="picture"
+              value={this.state.picture}
+              onChange={this.setField}
+            />
+            {/*picture required and must be url format*/}
+            {this.validator.message("picture", this.state.picture, "url")}
+          </div>
+          <div className="login-field" id="create-account-password">
+            <input
+              type="password"
+              placeholder="Password"
+              name="password"
+              value={this.state.password}
+              onChange={this.setField}
+            />
+            {/*password required and must be at least 8 characters*/}
+            {this.validator.message(
+              "password",
+              this.state.password,
+              "required|min:8"
+            )}
+          </div>
+          <button
+            type="submit"
+            form="create-account-form"
+            value="Submit"
+            className="login-btn"
+            id="create-account-submit"
+          >
+            <strong>Create Account</strong>
+          </button>
+        </form>
+        <a className="google-btn" href="http://localhost:5000/users/google">
+          <div className="google-icon-wrapper">
+            <img
+              className="google-icon"
+              src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+              alt="google icon"
+            />
+          </div>
+          <p className="btn-text">
+            <b>Sign in with Google</b>
+          </p>
+        </a>
+      </div>
     );
   }
 }

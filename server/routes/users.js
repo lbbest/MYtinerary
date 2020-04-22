@@ -69,6 +69,17 @@ router.get(
   }
 );
 
+/*GOOGLE*/
+/*google login route*/
+router.get("/google", (req, res) => {
+  /*get route*/
+});
+
+/*google redirect route*/
+router.get("/google/redirect", (req, res) => {
+  /*redirect route*/
+});
+
 /*create account post route*/
 router.post(
   "/create",

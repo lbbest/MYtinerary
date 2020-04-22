@@ -11,17 +11,13 @@ export default function CreateAcc() {
       <div className="content">
         <div className="login-content">
           <h1>Create Account</h1>
-          <p className="login-hello">
-            Enter your details below and enjoy full access to all of our
-            features!
-          </p>
-          <Createaccountform />
           <p>
             Already have an account?<br></br>
             <Link to="login" className="login-switch">
               Log in
             </Link>
           </p>
+          <Createaccountform />
         </div>
       </div>
     </div>
