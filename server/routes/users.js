@@ -21,7 +21,7 @@ router.post("/login", async (req, res) => {
           const payload = {
             id: user.id,
             username: user.username,
-            avatarPicture: user.avatarPicture,
+            picture: user.picture,
           };
           const options = { expiresIn: 2592000 };
           jwt.sign(payload, key.secretOrKey, options, (err, token) => {
@@ -53,7 +53,7 @@ router.get(
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     userModel
-      .findOne({ _id: req.user.id })
+      .findOne({ id: req.user.id })
       .then((user) => {
         res.json(user);
       })

@@ -45,6 +45,7 @@ export class Loginform extends Component {
       .then((res) => {
         // console.log(res);
         console.log(res.data);
+        window.location = "http://localhost:3000/";
       })
       .catch((err) => {
         console.log(err);

@@ -51,6 +51,7 @@ export class Createaccountform extends Component {
       .then((res) => {
         // console.log(res);
         console.log(res.data);
+        window.location = "http://localhost:3000/login";
       })
       .catch((err) => {
         console.log(err);
@@ -102,7 +103,11 @@ export class Createaccountform extends Component {
             onChange={this.setField}
           />
           {/*picture required and must be url format*/}
-          {this.validator.message("picture", this.state.picture, "url")}
+          {this.validator.message(
+            "picture",
+            this.state.picture,
+            "required|url"
+          )}
         </div>
         <div className="login-field" id="create-account-password">
           <input
