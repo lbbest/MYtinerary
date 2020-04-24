@@ -220,12 +220,6 @@ textarea {
 
 /*LOGIN/CREATE ACCOUNT*/
 
-.userform {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .login-content {
   display: flex;
   flex-direction: column;

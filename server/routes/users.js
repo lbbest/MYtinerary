@@ -7,15 +7,7 @@ const key = require("../keys");
 const jwt = require("jsonwebtoken");
 const passport = require("../passport");
 
-// router.get("/all", (req, res) => {
-//   userModel
-//     .find({})
-//     .then((files) => {
-//       res.send(files);
-//     })
-//     .catch((err) => console.log(err));
-// });
-
+/*LOGIN*/
 /*post login route*/
 router.post("/login", async (req, res) => {
   userModel.findOne({ email: req.body.email }, (err, user) => {
@@ -69,17 +61,7 @@ router.get(
   }
 );
 
-/*GOOGLE*/
-/*google login route*/
-router.get("/google", (req, res) => {
-  /*get route*/
-});
-
-/*google redirect route*/
-router.get("/google/redirect", (req, res) => {
-  /*redirect route*/
-});
-
+/*CREATE ACCOUNT*/
 /*create account post route*/
 router.post(
   "/create",

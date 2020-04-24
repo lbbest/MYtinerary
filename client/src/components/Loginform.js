@@ -53,64 +53,46 @@ export class Loginform extends Component {
 
   render() {
     return (
-      <div className="userform">
-        <form
-          className="login-form"
-          id="login-form"
-          onChange={this.setField}
-          onSubmit={this.handleSubmit}
-          method="post"
-          action="http://localhost:5000/users/login"
+      <form
+        className="login-form"
+        id="login-form"
+        onChange={this.setField}
+        onSubmit={this.handleSubmit}
+        method="post"
+        action="http://localhost:5000/users/login"
+      >
+        <div className="login-field" id="login-email">
+          <input
+            type="text"
+            placeholder="Email"
+            name="email"
+            value={this.state.email}
+            onChange={this.setField}
+          />
+          {/*email required for login*/}
+          {this.validator.message("email", this.state.email, "required")}
+        </div>
+        <div className="login-field" id="login-password">
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            value={this.state.password}
+            onChange={this.setField}
+          />
+          {/*password required for login*/}
+          {this.validator.message("password", this.state.password, "required")}
+        </div>
+        <button
+          type="submit"
+          form="login-form"
+          value="Submit"
+          className="login-btn"
+          id="login-submit"
         >
-          <div className="login-field" id="login-email">
-            <input
-              type="text"
-              placeholder="Email"
-              name="email"
-              value={this.state.email}
-              onChange={this.setField}
-            />
-            {/*email required for login*/}
-            {this.validator.message("email", this.state.email, "required")}
-          </div>
-          <div className="login-field" id="login-password">
-            <input
-              type="password"
-              placeholder="Password"
-              name="password"
-              value={this.state.password}
-              onChange={this.setField}
-            />
-            {/*password required for login*/}
-            {this.validator.message(
-              "password",
-              this.state.password,
-              "required"
-            )}
-          </div>
-          <button
-            type="submit"
-            form="login-form"
-            value="Submit"
-            className="login-btn"
-            id="login-submit"
-          >
-            <strong>Log In</strong>
-          </button>
-        </form>
-        <a className="google-btn" href="http://localhost:5000/users/google">
-          <div className="google-icon-wrapper">
-            <img
-              className="google-icon"
-              src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-              alt="google icon"
-            />
-          </div>
-          <p className="btn-text">
-            <b>Sign in with Google</b>
-          </p>
-        </a>
-      </div>
+          <strong>Log In</strong>
+        </button>
+      </form>
     );
   }
 }
