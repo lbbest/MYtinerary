@@ -10,6 +10,7 @@ import thunk from "redux-thunk";
 import { getCityAction } from "./store/actions/cityActions";
 import rootReducer from "./store/reducers/rootReducer";
 import { getItineraryAction } from "./store/actions/itineraryActions";
+import { login } from "./store/actions/authActions";
 
 const store = createStore(
   rootReducer,
@@ -27,6 +28,7 @@ ReactDOM.render(
 /*dispatch retrieve cities and itineraries actions to store*/
 store.dispatch(getCityAction());
 store.dispatch(getItineraryAction());
+//store.dispatch(login());
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

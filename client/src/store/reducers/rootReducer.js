@@ -1,9 +1,12 @@
 import { combineReducers } from "redux";
 import citiesReducer from "./citiesReducer";
 import itineraryReducer from "./itineraryReducer";
-/*combine city and itinerary reducers to bring both into state store*/
+import authReducer from "./authReducer";
+
+/*combine reducers to bring into state store*/
 const rootReducer = combineReducers({
   cities: citiesReducer,
-  itineraries: itineraryReducer
+  itineraries: itineraryReducer,
+  auth: authReducer,
 });
 export default rootReducer;

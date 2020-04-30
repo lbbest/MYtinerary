@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import axios from "axios";
+// import axios from "axios";
 import SimpleReactValidator from "simple-react-validator";
+import { login } from "../store/actions/authActions";
+import { connect } from "react-redux";
 
 export class Loginform extends Component {
   constructor(props) {
@@ -27,14 +29,21 @@ export class Loginform extends Component {
   async handleSubmit(event) {
     event.preventDefault();
 
+    const credentials = {
+      email: this.state.email,
+      password: this.state.password,
+    };
+
     // checks form validation and returns error messages if not valid inputs
     if (!this.validator.allValid()) {
       this.validator.showMessages();
       this.forceUpdate();
+    } else {
+      this.props.login(credentials);
     }
 
     // axios request
-    await axios({
+    /* await axios({
       method: "post",
       url: "http://localhost:5000/users/login",
       data: {
@@ -49,7 +58,7 @@ export class Loginform extends Component {
       })
       .catch((err) => {
         console.log(err);
-      });
+      }); */
   }
 
   render() {
@@ -98,4 +107,15 @@ export class Loginform extends Component {
   }
 }
 
-export default Loginform;
+// const mapStateToProps = (state) => {
+//   console.log(state.auth);
+//   return {
+//     auth: state.auth.data,
+//   };
+// };
+
+const mapDispatchToProps = (dispatch) => ({
+  login: (credentials) => dispatch(login(credentials)),
+});
+
+export default connect(null, mapDispatchToProps)(Loginform);
