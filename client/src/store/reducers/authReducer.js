@@ -2,7 +2,7 @@
 import { SET_USER } from "../actions/authActions";
 
 /*set initial state*/
-const initialState = { currentUser: {}, status: "" };
+const initialState = { currentUser: {}, isLoggedIn: false };
 
 /*assign user token to Redux store*/
 function auth(state = initialState, action) {
@@ -10,7 +10,7 @@ function auth(state = initialState, action) {
     case SET_USER:
       state = Object.assign({}, state, {
         currentUser: action.payload,
-        status: "success",
+        isLoggedIn: true,
       });
       break;
     // no default

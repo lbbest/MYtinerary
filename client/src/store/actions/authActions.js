@@ -6,6 +6,7 @@ const jwt_decode = require("jwt-decode");
 /*action types*/
 export const SET_USER = "SET_USER";
 
+/*redux action to set current user (see end of login function below)*/
 export function setCurrentUser(user) {
   return {
     type: SET_USER,
@@ -13,7 +14,7 @@ export function setCurrentUser(user) {
   };
 }
 
-/*redux action to log user in*/
+/*function to log user in*/
 export function login(credentials) {
   return function (dispatch) {
     // post credentials to users route

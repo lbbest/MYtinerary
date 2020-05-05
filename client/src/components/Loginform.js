@@ -41,24 +41,6 @@ export class Loginform extends Component {
     } else {
       this.props.login(credentials);
     }
-
-    // axios request
-    /* await axios({
-      method: "post",
-      url: "http://localhost:5000/users/login",
-      data: {
-        email: this.state.email,
-        password: this.state.password,
-      },
-    })
-      .then((res) => {
-        // console.log(res);
-        console.log(res.data);
-        window.location = "http://localhost:3000/";
-      })
-      .catch((err) => {
-        console.log(err);
-      }); */
   }
 
   render() {
@@ -106,13 +88,6 @@ export class Loginform extends Component {
     );
   }
 }
-
-// const mapStateToProps = (state) => {
-//   console.log(state.auth);
-//   return {
-//     auth: state.auth.data,
-//   };
-// };
 
 const mapDispatchToProps = (dispatch) => ({
   login: (credentials) => dispatch(login(credentials)),
