@@ -1,29 +1,16 @@
 /*import actions*/
-import {
-  LOGIN_REQUESTED,
-  LOGIN_SUCCESS,
-  LOGIN_FAILED,
-} from "../actions/authActions";
+import { SET_USER } from "../actions/authActions";
 
 /*set initial state*/
-const initialState = { token: "", status: "" };
+const initialState = { currentUser: {}, status: "" };
 
 /*assign user token to Redux store*/
 function auth(state = initialState, action) {
   switch (action.type) {
-    case LOGIN_REQUESTED:
-      state = Object.assign({}, state, { status: "waiting" });
-      break;
-    case LOGIN_SUCCESS:
+    case SET_USER:
       state = Object.assign({}, state, {
-        token: action.payload,
+        currentUser: action.payload,
         status: "success",
-      });
-      break;
-    case LOGIN_FAILED:
-      state = Object.assign({}, state, {
-        status: "failed",
-        error: action.payload,
       });
       break;
     // no default
