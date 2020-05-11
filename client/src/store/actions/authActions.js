@@ -42,6 +42,9 @@ export function login(credentials) {
 
         // dispatch payload to send user details to redux store
         dispatch(setCurrentUser(jwt.decode(jwttoken)));
+
+        // redirect user to homepage
+        window.location = "http://localhost:3000/";
       });
   };
 }
@@ -49,12 +52,19 @@ export function login(credentials) {
 /*function to log user out*/
 export function logout() {
   return function (dispatch) {
+    // remove JWT token from local storage
     localStorage.removeItem("token");
+
+    // remove token bearer from request headers
     setAuthorizationToken(undefined);
+
+    // dispatch logout action
     dispatch({
       type: LOGOUT,
       payload: undefined,
     });
+
+    // refresh page
     window.location.reload();
   };
 }

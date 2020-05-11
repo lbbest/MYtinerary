@@ -5,6 +5,7 @@ import Nav from "../components/Nav";
 
 /*landing page screen structure*/
 export class Landing extends Component {
+  // conditional rendering of homepage if user is logged in
   render() {
     // console.log(this.props);
     const userData = this.props.userData.isLoggedIn ? (

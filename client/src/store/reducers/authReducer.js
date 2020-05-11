@@ -5,7 +5,7 @@ import { LOGOUT } from "../actions/authActions";
 /*set initial state*/
 const initialState = { currentUser: {}, isLoggedIn: false };
 
-/*assign user token to Redux store*/
+/*assign user token to Redux store OR logout user*/
 function auth(state = initialState, action) {
   switch (action.type) {
     case SET_USER:

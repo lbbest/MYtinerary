@@ -5,14 +5,13 @@ import { logout } from "../store/actions/authActions";
 
 /*nav component structure*/
 export class Nav extends Component {
-  /*LOG OUT FUNCTION CALLED HERE*/
-
+  // conditional rendering of nav bar if user is logged in
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     const userData = this.props.userData.isLoggedIn ? (
       <div
         onClick={() => {
-          console.log("CLICK!");
+          this.props.logout();
         }}
       >
         <p style={bareLink}>Log Out</p>
@@ -46,8 +45,9 @@ const mapStateToProps = (state) => {
   };
 };
 
+/*dispatch logout action mapped to props*/
 const mapDispatchToProps = (dispatch) => ({
-  logout: () => dispatch(logout),
+  logout: () => dispatch(logout()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Nav);
