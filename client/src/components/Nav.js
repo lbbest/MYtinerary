@@ -1,14 +1,22 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { logout } from "../store/actions/authActions";
 
 /*nav component structure*/
 export class Nav extends Component {
   /*LOG OUT FUNCTION CALLED HERE*/
 
   render() {
+    console.log(this.props);
     const userData = this.props.userData.isLoggedIn ? (
-      <div style={bareLink}>Log Out</div>
+      <div
+        onClick={() => {
+          console.log("CLICK!");
+        }}
+      >
+        <p style={bareLink}>Log Out</p>
+      </div>
     ) : (
       <Link to="/login" style={bareLink}>
         Log In
@@ -24,7 +32,7 @@ export class Nav extends Component {
           <Link to="/cities" style={bareLink}>
             Cities
           </Link>
-          <div>{userData}</div>
+          {userData}
         </div>
       </div>
     );
@@ -38,7 +46,11 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, null)(Nav);
+const mapDispatchToProps = (dispatch) => ({
+  logout: () => dispatch(logout),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Nav);
 
 /*nav component styles*/
 const navStyle = {

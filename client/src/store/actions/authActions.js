@@ -48,12 +48,13 @@ export function login(credentials) {
 
 /*function to log user out*/
 export function logout() {
-  localStorage.removeItem("token");
-  setAuthorizationToken(undefined);
   return function (dispatch) {
+    localStorage.removeItem("token");
+    setAuthorizationToken(undefined);
     dispatch({
       type: LOGOUT,
       payload: undefined,
     });
+    window.location.reload();
   };
 }
