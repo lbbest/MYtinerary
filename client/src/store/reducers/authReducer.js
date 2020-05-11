@@ -1,5 +1,6 @@
 /*import actions*/
 import { SET_USER } from "../actions/authActions";
+import { LOGOUT } from "../actions/authActions";
 
 /*set initial state*/
 const initialState = { currentUser: {}, isLoggedIn: false };
@@ -13,6 +14,11 @@ function auth(state = initialState, action) {
         isLoggedIn: true,
       });
       break;
+    case LOGOUT:
+      state = Object.assign({}, state, {
+        currentUser: action.payload,
+        isLoggedIn: false,
+      });
     // no default
   }
   return state;

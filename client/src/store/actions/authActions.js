@@ -5,6 +5,7 @@ const jwt_decode = require("jwt-decode");
 
 /*action types*/
 export const SET_USER = "SET_USER";
+export const LOGOUT = "LOGOUT";
 
 /*redux action to set current user (see end of login function below)*/
 export function setCurrentUser(user) {
@@ -25,7 +26,6 @@ export function login(credentials) {
           "content-type": "application/json",
         },
       })
-      //.then((response) => response.json())
       .then((response) => {
         console.log(response);
 
@@ -43,5 +43,17 @@ export function login(credentials) {
         // dispatch payload to send user details to redux store
         dispatch(setCurrentUser(jwt.decode(jwttoken)));
       });
+  };
+}
+
+/*function to log user out*/
+export function logout() {
+  localStorage.removeItem("token");
+  setAuthorizationToken(undefined);
+  return function (dispatch) {
+    dispatch({
+      type: LOGOUT,
+      payload: undefined,
+    });
   };
 }
