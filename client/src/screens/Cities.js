@@ -9,7 +9,7 @@ export class Cities extends Component {
     super();
     /*screen-level state used to hold search query*/
     this.state = {
-      search: ""
+      search: "",
     };
   }
 
@@ -18,14 +18,14 @@ export class Cities extends Component {
   }
 
   /*update state as user inputs search query*/
-  handleSearch = search => {
+  handleSearch = (search) => {
     this.setState({ search });
     // console.log(search);
   };
 
   /*search bar function to return filtered list of cities that include query in city name or country name*/
   searchBar = () => {
-    let search = this.props.cities.filter(cities => {
+    let search = this.props.cities.filter((cities) => {
       return (
         cities.name.toUpperCase().startsWith(this.state.search.toUpperCase()) ||
         cities.country.toUpperCase().startsWith(this.state.search.toUpperCase())
@@ -51,11 +51,11 @@ export class Cities extends Component {
             id="filter"
             placeholder="Find a city..."
             /*fires search function upon user input*/
-            onChange={event => this.handleSearch(event.target.value)}
+            onChange={(event) => this.handleSearch(event.target.value)}
           ></input>
         </div>
-        <div className="content">
-          <div className="itemlist">
+        <div className="city-content">
+          <div className="city-itemlist">
             {cities &&
               filteredCities.map((city, index) => {
                 return <City key={index} city={city} />;
@@ -68,15 +68,15 @@ export class Cities extends Component {
 }
 
 /*subscribe screen to Redux store*/
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   // console.log(state);
   return {
-    cities: state.cities.data
+    cities: state.cities.data,
   };
 };
 
-const mapDispatchToProps = dispatch => ({
-  getCityAction: () => dispatch(getCityAction)
+const mapDispatchToProps = (dispatch) => ({
+  getCityAction: () => dispatch(getCityAction),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cities);

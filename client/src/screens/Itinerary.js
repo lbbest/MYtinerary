@@ -32,7 +32,7 @@ export class Itinerary extends Component {
     return (
       <div>
         <Nav />
-        <div className="content">
+        <div className="city-content">
           <h1 className="itineraryCity">{this.props.match.params.name}</h1>
           <div>{itinerary}</div>
         </div>

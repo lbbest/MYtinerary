@@ -22,8 +22,8 @@ const cityStyle = {
   display: "grid",
   gridTemplateRows: "50% 50%",
   gridTemplateColumns: "70% 30%",
-  boxShadow: "0px 0px 13px 4px rgba(184,184,184,0.74)",
-  textDecoration: "none"
+  textDecoration: "none",
+  borderBottom: "solid grey 1px",
 };
 
 const cityName = {
@@ -32,7 +32,7 @@ const cityName = {
   margin: "auto",
   textAlign: "center",
   fontSize: "2em",
-  color: "black"
+  color: "black",
 };
 
 const cityCountry = {
@@ -40,14 +40,14 @@ const cityCountry = {
   gridRow: "2/3",
   margin: "auto",
   textAlign: "center",
-  color: "#A9A9A9"
+  color: "#A9A9A9",
 };
 
 const cityImg = {
   gridColumn: "2/3",
   gridRow: "1/3",
-  borderLeft: "1px solid black",
+  borderLeft: "1px solid grey",
   objectFit: "cover",
   width: "100%",
-  height: "100%"
+  height: "100%",
 };
