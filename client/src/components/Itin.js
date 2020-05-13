@@ -19,7 +19,6 @@ export default function Itin(props) {
           <strong>{itin.user}</strong>
         </p>
         <div style={itinInfo}>
-          <p>Likes: {itin.likes}</p>
           <p>{itin.duration} hours</p>
           <p>{itin.price}</p>
         </div>

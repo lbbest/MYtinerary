@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { logout } from "../store/actions/authActions";
 
 /*nav component structure*/
 export class Nav extends Component {
@@ -9,13 +8,9 @@ export class Nav extends Component {
   render() {
     // console.log(this.props);
     const userData = this.props.userData.isLoggedIn ? (
-      <div
-        onClick={() => {
-          this.props.logout();
-        }}
-      >
-        <p style={bareLink}>Log Out</p>
-      </div>
+      <Link to="/profile" style={bareLink}>
+        Profile
+      </Link>
     ) : (
       <Link to="/login" style={bareLink}>
         Log In
@@ -32,6 +27,9 @@ export class Nav extends Component {
             Cities
           </Link>
           {userData}
+          <Link to="/add" style={bareLinkAdd}>
+            +
+          </Link>
         </div>
       </div>
     );
@@ -45,12 +43,7 @@ const mapStateToProps = (state) => {
   };
 };
 
-/*dispatch logout action mapped to props*/
-const mapDispatchToProps = (dispatch) => ({
-  logout: () => dispatch(logout()),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Nav);
+export default connect(mapStateToProps, null)(Nav);
 
 /*nav component styles*/
 const navStyle = {
@@ -70,4 +63,10 @@ const navStyle = {
 const bareLink = {
   textDecoration: "none",
   color: "white",
+};
+
+const bareLinkAdd = {
+  textDecoration: "none",
+  color: "white",
+  fontSize: "2rem",
 };

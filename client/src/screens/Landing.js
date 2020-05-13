@@ -10,7 +10,12 @@ export class Landing extends Component {
     // console.log(this.props);
     const userData = this.props.userData.isLoggedIn ? (
       <div>
-        <h3>Welcome, {this.props.userData.currentUser.username}!</h3>
+        <img
+          id="hello-pic"
+          src={this.props.userData.currentUser.picture}
+          alt="Profile Avatar"
+        ></img>
+        <h2>Welcome, {this.props.userData.currentUser.username}!</h2>
       </div>
     ) : (
       <div id="login" style={loginStyle}>

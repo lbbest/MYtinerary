@@ -6,6 +6,8 @@ import Cities from "./screens/Cities";
 import Login from "./screens/Login";
 import CreateAcc from "./screens/CreateAcc";
 import { Itinerary } from "./screens/Itinerary";
+import Profile from "./screens/Profile";
+import Add from "./screens/Add";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route path="/itineraries/:name" component={Itinerary} />
           <Route path="/login" component={Login} />
           <Route path="/createaccount" component={CreateAcc} />
+          <Route path="/profile" component={Profile} />
+          <Route path="/add" component={Add} />
         </Switch>
       </div>
     </BrowserRouter>

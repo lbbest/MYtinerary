@@ -64,7 +64,7 @@ export function logout() {
       payload: undefined,
     });
 
-    // refresh page
-    window.location.reload();
+    // redirect user to homepage
+    window.location = "http://localhost:3000/";
   };
 }

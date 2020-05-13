@@ -19,10 +19,6 @@ const itinerarySchema = new Schema({
   picture: {
     type: String,
   },
-  likes: {
-    type: Number,
-    required: true,
-  },
   duration: {
     type: Number,
     required: true,

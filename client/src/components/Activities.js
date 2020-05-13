@@ -30,12 +30,12 @@ const swipeStyle = {
 
 const activityStyle = {
   height: "20vh",
-  backgroundColor: "#3c91e6",
+  backgroundColor: "#fff",
 };
 
 const activityNameStyle = {
   position: "relative",
   top: "50%",
   transform: "translateY(-50%)",
-  color: "white",
+  color: "black",
 };
