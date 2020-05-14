@@ -20,7 +20,7 @@ const itinerarySchema = new Schema({
     type: String,
   },
   duration: {
-    type: Number,
+    type: String,
     required: true,
   },
   price: {
@@ -29,7 +29,6 @@ const itinerarySchema = new Schema({
   },
   hashtags: {
     type: Array,
-    required: true,
   },
   activities: {
     type: Array,

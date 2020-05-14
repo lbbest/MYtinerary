@@ -7,22 +7,22 @@ export const CITY_FAILED = "CITY_FAILED";
 
 /*redux action to retrieve cities from MongoDB*/
 export function getCityAction() {
-  return function(dispatch) {
+  return function (dispatch) {
     dispatch({
-      type: CITY_REQUESTED
+      type: CITY_REQUESTED,
     });
     fetch("http://localhost:5000/cities/all")
-      .then(response => response.json())
-      .then(data =>
+      .then((response) => response.json())
+      .then((data) =>
         dispatch({
           type: CITY_RECEIVED,
-          payload: data
+          payload: data,
         })
       )
-      .catch(error =>
+      .catch((error) =>
         dispatch({
           type: CITY_FAILED,
-          payload: error
+          payload: error,
         })
       );
   };

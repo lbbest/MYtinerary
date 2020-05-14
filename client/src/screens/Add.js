@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import Nav from "../components/Nav";
 import Loginform from "../components/Loginform";
 import SimpleReactValidator from "simple-react-validator";
+import axios from "axios";
 
 export class Add extends Component {
   constructor(props) {
@@ -37,9 +38,7 @@ export class Add extends Component {
   }
 
   // function for submitting city form
-  async handleSubmitCity(event) {
-    event.preventDefault();
-
+  async handleSubmitCity() {
     // checks form validation and returns error messages if not valid inputs
     if (!this.validator.fieldValid("city name")) {
       this.validator.showMessageFor("city name");
@@ -68,13 +67,19 @@ export class Add extends Component {
         img: this.state.cityimg,
       };
       console.log(city);
+      axios
+        .post("http://localhost:5000/cities/addcity", city)
+        .then((response) => {
+          console.log(response);
+        })
+        .then((error) => {
+          console.log(error);
+        });
     }
   }
 
   // function for submitting itinerary form
-  async handleSubmitItinerary(event) {
-    event.preventDefault();
-
+  async handleSubmitItinerary() {
     // checks form validation and returns error messages if not valid inputs
     if (!this.validator.fieldValid("city")) {
       this.validator.showMessageFor("city");
@@ -96,11 +101,6 @@ export class Add extends Component {
       this.forceUpdate();
     }
 
-    if (!this.validator.fieldValid("hashtags")) {
-      this.validator.showMessageFor("hashtags");
-      this.forceUpdate();
-    }
-
     if (!this.validator.fieldValid("activities")) {
       this.validator.showMessageFor("activities");
       this.forceUpdate();
@@ -112,15 +112,12 @@ export class Add extends Component {
       this.validator.fieldValid("title") &&
       this.validator.fieldValid("duration") &&
       this.validator.fieldValid("price") &&
-      this.validator.fieldValid("hashtags") &&
       this.validator.fieldValid("activities")
     ) {
       const hashtagString = this.state.itineraryhashtags;
-      const hashtagArray = hashtagString.split(" ");
+      const hashtagArray = hashtagString.split(",");
       const activityString = this.state.itineraryactivities;
-      const activityArray = activityString.split(" ");
-
-      // CONVERT ITINERARYNAME & TITLE TO TITLE CASE BEFORE INSERTING BELOW
+      const activityArray = activityString.split(",");
 
       const itinerary = {
         name: this.state.itineraryname,
@@ -133,6 +130,14 @@ export class Add extends Component {
         activities: activityArray,
       };
       console.log(itinerary);
+      axios
+        .post("http://localhost:5000/itineraries/additinerary", itinerary)
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error.response);
+        });
     }
   }
 
@@ -566,29 +571,12 @@ export class Add extends Component {
               )}
             </div>
             <div className="form-row">
-              <label htmlFor="hashtags">Hashtags:</label>
-              <input
-                type="text"
-                id="itineraryhashtags"
-                name="itineraryhashtags"
-                placeholder="Separated by spaces"
-                value={this.state.itineraryhashtags}
-                onChange={this.setField}
-              ></input>
-              {/*hashtags not required but only alphanum and space characters*/}
-              {this.validator.message(
-                "hashtags",
-                this.state.itineraryhashtags,
-                "alpha_num_space"
-              )}
-            </div>
-            <div className="form-row">
               <label htmlFor="activities">Activities:</label>
               <input
                 type="text"
                 id="itineraryactivities"
                 name="itineraryactivities"
-                placeholder="Separated by spaces"
+                placeholder="Separated by commas"
                 value={this.state.itineraryactivities}
                 onChange={this.setField}
               ></input>
@@ -596,8 +584,19 @@ export class Add extends Component {
               {this.validator.message(
                 "activities",
                 this.state.itineraryactivities,
-                "required|alpha_num_space"
+                "required"
               )}
+            </div>
+            <div className="form-row">
+              <label htmlFor="hashtags">Hashtags:</label>
+              <input
+                type="text"
+                id="itineraryhashtags"
+                name="itineraryhashtags"
+                placeholder="Separated by commas"
+                value={this.state.itineraryhashtags}
+                onChange={this.setField}
+              ></input>
             </div>
             <button
               type="submit"

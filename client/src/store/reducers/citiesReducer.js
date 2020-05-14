@@ -2,7 +2,7 @@
 import {
   CITY_REQUESTED,
   CITY_RECEIVED,
-  CITY_FAILED
+  CITY_FAILED,
 } from "../actions/cityActions";
 
 /*set initial state*/
@@ -17,13 +17,13 @@ function cities(state = initialState, action) {
     case CITY_RECEIVED:
       state = Object.assign({}, state, {
         data: [...action.payload],
-        status: "received"
+        status: "received",
       });
       break;
     case CITY_FAILED:
       state = Object.assign({}, state, {
         status: "failed",
-        error: action.payload
+        error: action.payload,
       });
       break;
     // no default
