@@ -38,7 +38,9 @@ export class Add extends Component {
   }
 
   // function for submitting city form
-  async handleSubmitCity() {
+  async handleSubmitCity(event) {
+    event.preventDefault();
+
     // checks form validation and returns error messages if not valid inputs
     if (!this.validator.fieldValid("city name")) {
       this.validator.showMessageFor("city name");
@@ -61,12 +63,21 @@ export class Add extends Component {
       this.validator.fieldValid("country") &&
       this.validator.fieldValid("picture")
     ) {
+      // Capitalise first letter of each word
+      const nameFormatted = this.state.cityname
+        .split(" ")
+        .map((w) => w.substring(0, 1).toUpperCase() + w.substring(1))
+        .join(" ");
+
+      // Set object to be sent in post request body
       const city = {
-        name: this.state.cityname,
+        name: nameFormatted,
         country: this.state.citycountry,
         img: this.state.cityimg,
       };
       console.log(city);
+
+      // Send post request to server
       axios
         .post("http://localhost:5000/cities/addcity", city)
         .then((response) => {
@@ -79,7 +90,9 @@ export class Add extends Component {
   }
 
   // function for submitting itinerary form
-  async handleSubmitItinerary() {
+  async handleSubmitItinerary(event) {
+    event.preventDefault();
+
     // checks form validation and returns error messages if not valid inputs
     if (!this.validator.fieldValid("city")) {
       this.validator.showMessageFor("city");
@@ -114,11 +127,13 @@ export class Add extends Component {
       this.validator.fieldValid("price") &&
       this.validator.fieldValid("activities")
     ) {
+      // Convert strings to array seperating along commas
       const hashtagString = this.state.itineraryhashtags;
       const hashtagArray = hashtagString.split(",");
       const activityString = this.state.itineraryactivities;
       const activityArray = activityString.split(",");
 
+      // Set object to be sent in post request body
       const itinerary = {
         name: this.state.itineraryname,
         title: this.state.itinerarytitle,
@@ -130,6 +145,8 @@ export class Add extends Component {
         activities: activityArray,
       };
       console.log(itinerary);
+
+      // Send post request to server
       axios
         .post("http://localhost:5000/itineraries/additinerary", itinerary)
         .then((response) => {

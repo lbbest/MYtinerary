@@ -1,6 +1,5 @@
 import React from "react";
 import Activities from "./Activities";
-import Commentbox from "./Commentbox";
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
@@ -44,7 +43,6 @@ export default function Itin(props) {
               city={props.itinerary.name}
               activities={props.itinerary.activities}
             />
-            <Commentbox />
           </ExpansionPanelDetails>
         </ExpansionPanel>
       </div>
