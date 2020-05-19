@@ -22,6 +22,8 @@ router.post("/login", async (req, res) => {
             id: user.id,
             username: user.username,
             picture: user.picture,
+            email: user.email,
+            password: user.password,
           };
           const options = { expiresIn: 2592000 };
           jwt.sign(payload, key.secretOrKey, options, (err, token) => {
@@ -99,5 +101,53 @@ router.post(
     });
   }
 );
+
+/*UPDATE USER DETAILS*/
+/*username put route*/
+router.put("/username", async (req, res) => {
+  userModel.findOneAndUpdate(
+    { username: req.body.username },
+    { username: req.body.newusername },
+    { new: true },
+    (err, user) => {
+      if (err) {
+        console.log("There was an error updating username.");
+      }
+      console.log(user);
+    }
+  );
+});
+
+/*email put route*/
+router.put("/email", async (req, res) => {
+  userModel.findOneAndUpdate(
+    { email: req.body.email },
+    { email: req.body.newemail },
+    { new: true },
+    (err, user) => {
+      if (err) {
+        console.log("There was an error updating email.");
+      }
+      console.log(user);
+    }
+  );
+});
+
+/*picture put route*/
+router.put("/picture", async (req, res) => {
+  userModel.findOneAndUpdate(
+    { picture: req.body.picture },
+    { picture: req.body.newpicture },
+    { new: true },
+    (err, user) => {
+      if (err) {
+        console.log("There was an error updating picture.");
+      }
+      console.log(user);
+    }
+  );
+});
+
+/*password put route*/
 
 module.exports = router;
