@@ -17,13 +17,15 @@ export default function City(props) {
 
 /*city component styles*/
 const cityStyle = {
-  width: "100%",
-  height: "15vh",
+  maxWidth: "100%",
+  height: "125px",
   display: "grid",
   gridTemplateRows: "50% 50%",
   gridTemplateColumns: "70% 30%",
   textDecoration: "none",
-  borderBottom: "solid grey 1px",
+  border: "solid grey 1px",
+  borderRadius: "5px",
+  margin: "20px 5px",
 };
 
 const cityName = {

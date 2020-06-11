@@ -20,31 +20,50 @@ export default function Activities(props) {
   const activities = props.activities;
   const city = props.city;
   return (
-    <SwipeableViews>
+    <div style={activityContainer}>
       {activities.map((activity) => (
-        <a
-          href={`https://www.google.com/maps/dir/Current+Location/${city}+${activity}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="activity"
-        >
-          <div style={activityStyle}>
-            <p style={activityNameStyle}>{activity}</p>
-          </div>
-        </a>
+        <div style={activityBlock}>
+          {activity}
+          <a
+            href={`https://www.google.com/maps/dir/Current+Location/${city}+${activity}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="activity"
+            style={directionsButton}
+          >
+            Directions
+          </a>
+        </div>
       ))}
-    </SwipeableViews>
+    </div>
   );
 }
 
-const activityStyle = {
-  height: "20vh",
-  backgroundColor: "#fff",
+const activityContainer = {
+  display: "flex",
+  flexDirection: "row",
+  flexWrap: "wrap",
+  width: "100%",
+  justifyContent: "space-around",
 };
 
-const activityNameStyle = {
-  position: "relative",
-  top: "50%",
-  transform: "translateY(-50%)",
+const activityBlock = {
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-around",
+  height: "100px",
+  width: "250px",
+  margin: "20px 0",
+  marginRight: "auto",
+  backgroundColor: "white",
+  borderRadius: "5px",
   color: "black",
+};
+
+const directionsButton = {
+  border: "1px solid black",
+  borderRadius: "5px",
+  padding: "5px",
+  margin: "0 auto",
+  width: "50%",
 };

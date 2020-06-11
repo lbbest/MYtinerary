@@ -54,12 +54,13 @@ export default function Itin(props) {
 
 const cardStyle = {
   border: "1px solid black",
-  // borderRadius: "5px",
+  borderRadius: "5px",
+  margin: "20px 5px",
 };
 
 const itinStyle = {
   width: "100%",
-  height: "25vh",
+  height: "150px",
   display: "grid",
   gridTemplateRows: "1fr, 1fr, 1fr",
   gridTemplateColumns: "25% 25% 25% 25%",
@@ -71,7 +72,9 @@ const itinPicture = {
   gridRow: "1/3",
   gridColumn: "1/2",
   height: "90%",
+  maxHeight: "100px",
   width: "90%",
+  maxWidth: "100px",
   borderRadius: "5px",
 };
 

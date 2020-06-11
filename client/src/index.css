@@ -43,6 +43,8 @@ code {
 .city-content {
   padding: 125px 0 0 0;
   width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
@@ -52,12 +54,12 @@ code {
 #homepage {
   margin-top: 75px;
   padding: 0 10%;
-  background-image: linear-gradient(var(--primary-color) 19%, white);
+  background-color: var(--primary-color);
 }
 
 .logo {
   font-family: "Yellowtail", cursive;
-  font-size: 15vw;
+  font-size: 7rem;
   color: white;
 }
 
@@ -65,7 +67,10 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 85vh;
+  height: 95vh;
+  max-width: 750px;
+  margin: 0 auto;
+  color: white;
 }
 
 #hello > * {
@@ -244,6 +249,9 @@ textarea {
   flex-direction: column;
   justify-content: space-between;
   height: 75vh;
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
   overflow-y: visible;
 }
 
@@ -293,6 +301,9 @@ textarea {
 
 /*ADD DATA FORMS*/
 .add-itinerary {
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
 }
 
 .form-container {
@@ -317,7 +328,7 @@ textarea {
 .form-row > input,
 select {
   width: 100%;
-  height: 7vh;
+  height: 5vh;
   font-size: 1rem;
   padding: 5%;
   background-color: #f1f1f1;
@@ -355,6 +366,8 @@ select {
 
 .user-details {
   width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
