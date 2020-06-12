@@ -67,7 +67,7 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 95vh;
+  height: 110vh;
   max-width: 750px;
   margin: 0 auto;
   color: white;
