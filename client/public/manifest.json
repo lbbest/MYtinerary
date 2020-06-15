@@ -1,6 +1,7 @@
 {
   "short_name": "MYtinerary",
   "name": "MYtinerary",
+  "manifest_version": 2,
   "start_url": "/",
   "display": "standalone",
   "theme_color": "#000000",
