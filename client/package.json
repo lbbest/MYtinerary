@@ -1,6 +1,6 @@
 {
   "name": "client",
-  "homepage": "https://happy-mayer-09415d.netlify.app/",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
