@@ -1,7 +1,7 @@
 {
-  "short_name": "MYtinerary",
-  "name": "MYtinerary",
-  "start_url": "/",
+  "short_name": "mytinerary",
+  "name": "mytinerary",
+  "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
